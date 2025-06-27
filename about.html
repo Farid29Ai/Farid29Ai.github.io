@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Firework Animation</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+
+<script>
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  let fireworks = [];
+  let fireNumber = 20;
+  let range = 80;
+
+  function randColor() {
+    const colors = ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C'];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+
+  function makeFullCircleFirework(fire) {
+    let color = randColor();
+    let velocity = Math.random() * 8 + 8;
+    let max = fireNumber * 3;
+
+    for (let i = 0; i < max; i++) {
+      let rad = (i * Math.PI * 2) / max;
+
+      let firework = {
+        x: fire.x,
+        y: fire.y,
+        size: Math.random() + 1.5,
+        fill: color,
+        vx: Math.cos(rad) * velocity + (Math.random() - 0.5) * 0.5,
+        vy: Math.sin(rad) * velocity + (Math.random() - 0.5) * 0.5,
+        ay: 0.06,
+        alpha: 1,
+        life: Math.round((Math.random() * range) / 2) + range / 1.5
+      };
+
+      fireworks.push(firework);
+    }
+  }
+
+  function updateFireworks() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = fireworks.length - 1; i >= 0; i--) {
+      let f = fireworks[i];
+      f.vy += f.ay;
+      f.x += f.vx;
+      f.y += f.vy;
+      f.alpha -= 0.01;
+
+      ctx.beginPath();
+      ctx.arc(f.x, f.y, f.size, 0, Math.PI * 2);
+      ctx.fillStyle = f.fill;
+      ctx.globalAlpha = f.alpha;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+
+      f.life--;
+      if (f.life <= 0 || f.alpha <= 0) {
+        fireworks.splice(i, 1);
+      }
+    }
+  }
+
+  function animate() {
+    requestAnimationFrame(animate);
+    updateFireworks();
+  }
+
+  canvas.addEventListener('click', function(e) {
+    makeFullCircleFirework({ x: e.clientX, y: e.clientY });
+  });
+
+  animate();
+</script>
+<style>
+a {
+  text-decoration: none;
+  display: inline-red;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: red;
+}
+
+.next {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.round {
+  border-radius: 50%;
+}
+</style>
+</head>
+<body>
+<div style="text-align: right;">
+<a href="home.html" class="previous">Previous &raquo;</a>
+ </div>
+</body>
+</html>

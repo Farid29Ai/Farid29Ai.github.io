@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Website Resume</title>
+  <link rel="shortcut icon" type="image/jpg" href="aiman1.jpg" />
+
+  <style>
+    body {
+      background-color: silver;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+    }
+
+    a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .next {
+      background-color: #04AA6D;
+      color: white;
+    }
+
+    .round {
+      border-radius: 50%;
+    }
+
+    /* Animated Gradient Border */
+    .image-border, .imageborder {
+      display: inline-block;
+      padding: 8px;
+      border: 6px solid;
+      border-image: linear-gradient(45deg, #ff0080, #7928ca, #2afadf, #00ffd5) 1;
+      animation: borderAnimation 6s infinite linear;
+    }
+
+    .image-border img, .imageborder img {
+      height: 700px;
+      display: block;
+    }
+
+    @keyframes borderAnimation {
+      0% {
+        border-image-source: linear-gradient(0deg, #ff0080, #7928ca, #2afadf, #00ffd5);
+      }
+
+      25% {
+        border-image-source: linear-gradient(90deg, #ff0080, #7928ca, #2afadf, #00ffd5);
+      }
+
+      50% {
+        border-image-source: linear-gradient(180deg, #ff0080, #7928ca, #2afadf, #00ffd5);
+      }
+
+      75% {
+        border-image-source: linear-gradient(270deg, #ff0080, #7928ca, #2afadf, #00ffd5);
+      }
+
+      100% {
+        border-image-source: linear-gradient(360deg, #ff0080, #7928ca, #2afadf, #00ffd5);
+      }
+    }
+
+    .about-section, .education-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .about-text, .education-text {
+      max-width: 700px;
+      font-size: 20px;
+      color: #000033;
+      line-height: 1.6;
+    }
+
+    .about-text h2, .education-text h2 {
+      font-size: 36px;
+      color: darkblue;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- First Division -->
+  <div id="firstdivision" style="background-image: url('sky.png'); background-size: cover; height:550px; padding-top:80px; text-align:center;">
+    <img src="aiman1.jpg" style="height:250px; border-radius:10%; border: 5px solid #FEDE00;" alt="web icon">
+    <h1 style="font-size:100px; color:#FFFF00; margin:10px;">--FARID--</h1>
+    <p style="font-size:30px; color: darkblue;"><em>The Power of Dream</em></p>
+    <p style="font-size: 20px; color:#000080;"><a href="#seconddivision">About me</a></p>
+  </div>
+
+  <!-- Second Division -->
+  <div id="seconddivision" class="about-section">
+    <!-- Animated Image -->
+    <div class="image-border">
+      <img src="aiman2.jpg" alt="A pretend invisible person wearing a hat, glasses, and coat." />
+    </div>
+
+    <!-- About Me Text -->
+    <div class="about-text">
+      <h2>About Me ʕ•́ᴥ•̀ʔっ</h2>
+      <p style="text-align: justify;">Muhammad Aiman Farid Bin Ahmad Sofian Gan. I am 21 years old and currently pursuing a Diploma in Information Management. I am passionate about data organization, digital systems, and efficient information handling. With a strong foundation in both theoretical knowledge and practical skills, I aim to contribute meaningfully in administrative, archival, or data-related roles. I am quick to learn, responsible, and capable of working both independently and in a team environment.</p>
+
+      <h2>Skills</h2>
+      <ul>
+        <li>Microsoft Excel, Word, PowerPoint</li>
+        <li>Canva (Design tool)</li>
+        <li>HTML, XAMPP, C++, Java</li>
+        <li>Data entry and digital filing</li>
+      </ul>
+
+      <h2>Languages</h2>
+      <ul>
+        <li>Bahasa Melayu (Fluent)</li>
+        <li>English (Fluent)</li>
+      </ul>
+
+      <p>Email me at: <a href="mailto:faridaiman438@gmail.com">faridaiman438@gmail.com</a></p>
+    </div>
+  </div>
+
+  <!-- Third Division -->
+  <div id="thirddivision" class="education-section">
+    <!-- Animated Image -->
+    <div class="imageborder">
+      <img src="REMBAU.jpg" alt="Building UiTM Rembau" />
+    </div>
+
+    <!-- Education Text -->
+    <div class="education-text">
+      <h2 style="text-align: center;">EDUCATION ʕ•́ᴥ•̀ʔっ</h2>
+      <p style="text-align: justify;">Universiti Teknologi MARA (UiTM), Rembau, Negeri Sembilan. Diploma in Information Management.</p>
+      <ul>
+        <li>Current CGPA: 3.61</li>
+        <li>Gained a strong foundation in programming, systems, and digital information handling</li>
+        <li>Relevant coursework includes Computer Science, Database Management, Information Systems, and Information Retrieval</li>
+        <li>Developed key skills in managing both digital and non-digital information resources</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- YouTube Section -->
+  <div style="text-align: center; padding: 20px;">
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/8mtxEbvzkHs" 
+      title="Татьяна Куртукова - Матушка" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Scroll to Top & Next -->
+  <p style="line-height: 2.0; font-size:20px; text-align: center; padding-top: 40px;">
+    End of page <a href="#firstdivision">Click to go UP</a>
+  </p>
+
+  <div style="text-align: center; margin: 40px 0;">
+    <a href="about.html" class="next round">Next &raquo;</a>
+  </div>
+
+  <!-- Footer -->
+  <div style="height:auto; background-color:#ADD8E6;">
+    <h1 style="color:blue; padding:50px; margin:0; text-align:center;">&#x2764; Made in Malaysia &#x2764;</h1>
+  </div>
+
+</body>
+</html>
